@@ -1,0 +1,26 @@
+{
+  "name": "bitcoin-wallet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaeykim/bitcoin-wallet-js.git"
+  },
+  "author": "jaeykim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaeykim/bitcoin-wallet-js/issues"
+  },
+  "homepage": "https://github.com/jaeykim/bitcoin-wallet-js#readme",
+  "dependencies": {
+    "bs58": "^4.0.1",
+    "elliptic": "^6.4.1",
+    "js-sha256": "^0.9.0",
+    "ripemd160": "^2.0.2",
+    "secure-random": "^1.1.1"
+  }
+}
