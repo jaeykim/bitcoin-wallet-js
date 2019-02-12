@@ -14,13 +14,11 @@ let c_network;
 
 switch (env.network) {
     case Constants.Networks.Testnet:
-        console.log("testnet");
         c_blockexplorer = blockexplorer.usingNetwork(3);
         c_pushtx = pushtx.usingNetwork(3).pushtx;
         c_network = bitcoin.networks.testnet;
         break;
     case Constants.Networks.Bitcoin:
-        console.log("mainnet");
         c_blockexplorer = blockexplorer;
         c_pushtx = pushtx.pushtx;
         c_network = bitcoin.networks.bitcoin;

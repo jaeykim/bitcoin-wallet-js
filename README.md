@@ -4,10 +4,23 @@ This is the JavaScript library for Bitcoin wallet wrapping bitcoinjs-lib.
 
 ## Installation
 To enable our launchpadrepository please run:
-```JavaScript
+```bash
 $ git clone https://github.com/jaeykim/bitcoin-wallet-js.git
+$ cd bitcoin-wallet-js
 $ npm install
 ```
+
+## Change the network
+The default network is Bitcoin testnet.
+If you want to use the mainnet, please modify the env.json file.
+```JavaScript
+{
+    "network": "bitcoin"
+}
+```
+
+## Instruction
+How to use?
 
 ### Initialize
 Initialization is done by make a WalletsContent object.
