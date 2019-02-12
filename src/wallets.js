@@ -73,11 +73,12 @@ class WalletsContent {
     }
 
     create(name, password) {
-        validateFormHashed(password).then((hash) => {
+        return validateFormHashed(password).then((hash) => {
             const mnemonic = Wallet.generate();
             const wallet = Wallet.create(name, mnemonic).encrypt(hash);
             this.__addWallet(wallet, mnemonic);
-            console.log(wallet);
+            //console.log(wallet);
+            return wallet;
         });
     }
 

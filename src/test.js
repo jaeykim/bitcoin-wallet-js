@@ -2,7 +2,9 @@ var WalletsContent = require('./wallets');
 
 var wallet = new WalletsContent();
 
-var newWallet = wallet.create("test3", "1234");
+wallet.create("test5", "1234").then((w) => {
+    console.log(w);
+});
 
 /*
 setTimeout(() => {
