@@ -58,7 +58,6 @@ class WalletsContent {
                 w.update();
             });
             this.state.sourceWallet = wallets[1];
-            console.log('sourceWallet: ', this.state.sourceWallet);
         }, (e) => {
             console.log(e);
             console.error('Could not load wallets from database');
@@ -78,6 +77,7 @@ class WalletsContent {
             const mnemonic = Wallet.generate();
             const wallet = Wallet.create(name, mnemonic).encrypt(hash);
             this.__addWallet(wallet, mnemonic);
+            console.log(wallet);
         });
     }
 
@@ -98,7 +98,8 @@ class WalletsContent {
             }
             this.state.sourceWallet.send(
                 bitcoin, address, fee, hash
-            ).then(() => {
+            ).then((value) => {
+                console.log(`txid: ${value}`);
                 console.log(Constants.Messages.Transactions.Sent);
                 this.reload();
             }, (e) => {

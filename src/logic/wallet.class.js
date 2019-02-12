@@ -126,9 +126,15 @@ class Wallet extends EventEmitter {
 
         txb.sign(0, key);
 
+        console.log(txb.build().getId());
+
+        /*
         const raw = txb.build().toHex();
 
         return bnet.api.broadcast(raw);
+        */
+
+        return bnet.api.broadcast(txb.build());
     }
 
 

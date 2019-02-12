@@ -39,7 +39,10 @@ const getFee = () => {
     });
 };
 
-const broadcast = tx => c_pushtx(tx).then(result => result === Constants.ReturnValues.TransactionSubmitted);
+const broadcast = tx => c_pushtx(tx.toHex()).then(result => {
+    // result === Constants.ReturnValues.TransactionSubmitted
+    return tx.getId();
+});
 
 const getUnspentOutputs = (address) => {
     return c_blockexplorer.getUnspentOutputs(address).then((result) => {
