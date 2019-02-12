@@ -57,14 +57,16 @@ class WalletsContent {
                 });
                 w.update();
             });
+            this.state.sourceWallet = wallets[1];
+            console.log('sourceWallet: ', this.state.sourceWallet);
         }, (e) => {
             console.log(e);
             console.error('Could not load wallets from database');
         });
     }
 
-    setState(prop) {
-
+    setSourceWallet(index) {
+        this.state.sourceWallet = this.state.wallets[index];
     }
 
     getWallets() {
@@ -95,10 +97,10 @@ class WalletsContent {
                 return;
             }
             this.state.sourceWallet.send(
-                bitcoin, address, fee, password
+                bitcoin, address, fee, hash
             ).then(() => {
                 console.log(Constants.Messages.Transactions.Sent);
-                this.Reload();
+                this.reload();
             }, (e) => {
                 const info = { title: Constants.Messages.Transactions.NOTSent };
                 const substring = Constants.ReturnValues.Fragments.MinimumFeeNotMet;
@@ -107,7 +109,6 @@ class WalletsContent {
                 }
                 console.error(info);
             });
-
         }, (e) => {
             console.log(e);
             console.error('Bad format for password entered');
